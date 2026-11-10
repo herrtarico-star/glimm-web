@@ -1,6 +1,8 @@
 /* Glimm translations: de, en, es, fr, pt, it */
 window.GLIMM_I18N = {
   de: {
+    adPrivacy: "Werbe-Einstellungen",
+    iapSoon: "Käufe sind bald verfügbar.",
     musicVol: "Musiklautstärke",
     songCredit: "Titelmelodie „Lichterflug“ – eigens für Glimm komponiert",
     navVillage: "Dorf",
@@ -251,6 +253,8 @@ window.GLIMM_I18N = {
     shareCta: 'Schaffst du mehr?', copied: 'In die Zwischenablage kopiert', copyManual: 'Text markiert. Bitte kopieren.',
   },
   en: {
+    adPrivacy: "Ad settings",
+    iapSoon: "Purchases are coming soon.",
     musicVol: "Music volume",
     songCredit: "Theme “Lichterflug” – composed especially for Glimm",
     navVillage: "Village",
@@ -501,6 +505,8 @@ window.GLIMM_I18N = {
     shareCta: 'Can you beat it?', copied: 'Copied to clipboard', copyManual: 'Text selected. Please copy it.',
   },
   es: {
+    adPrivacy: "Ajustes de anuncios",
+    iapSoon: "Las compras estarán disponibles pronto.",
     musicVol: "Volumen de la música",
     songCredit: "Tema «Lichterflug», compuesto especialmente para Glimm",
     navVillage: "Pueblo",
@@ -751,6 +757,8 @@ window.GLIMM_I18N = {
     shareCta: '¿Puedes superarlo?', copied: 'Copiado al portapapeles', copyManual: 'Texto seleccionado. Cópialo, por favor.',
   },
   fr: {
+    adPrivacy: "Paramètres des pubs",
+    iapSoon: "Les achats arrivent bientôt.",
     musicVol: "Volume de la musique",
     songCredit: "Thème « Lichterflug », composé spécialement pour Glimm",
     navVillage: "Village",
@@ -1001,6 +1009,8 @@ window.GLIMM_I18N = {
     shareCta: 'Tu fais mieux ?', copied: 'Copié dans le presse-papiers', copyManual: 'Texte sélectionné. Copie-le, s’il te plaît.',
   },
   pt: {
+    adPrivacy: "Configurações de anúncios",
+    iapSoon: "As compras estarão disponíveis em breve.",
     musicVol: "Volume da música",
     songCredit: "Tema “Lichterflug”, composto especialmente para Glimm",
     navVillage: "Vila",
@@ -1251,6 +1261,8 @@ window.GLIMM_I18N = {
     shareCta: 'Você consegue mais?', copied: 'Copiado', copyManual: 'Texto selecionado. Copie, por favor.',
   },
   it: {
+    adPrivacy: "Impostazioni annunci",
+    iapSoon: "Gli acquisti saranno disponibili a breve.",
     musicVol: "Volume della musica",
     songCredit: "Tema «Lichterflug», composto apposta per Glimm",
     navVillage: "Villaggio",

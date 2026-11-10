@@ -283,7 +283,7 @@
     buy(id) {
       Analytics.track('iap_click', { id });
       const n = Native();
-      if (n && n.purchase) { Promise.resolve(n.purchase(id)).then(ok => { if (ok) grantPurchase(id); }).catch(() => {}); return; }
+      if (n && n.purchase) { Promise.resolve(n.purchase(id)).then(ok => { if (ok === true) grantPurchase(id); else if (ok === 'unavailable') toast(t('iapSoon')); }).catch(() => {}); return; }
       toast(t('iapOnly'));
     },
   };
@@ -1710,6 +1710,7 @@
         LANGS.map(l => `<button data-act="lang" data-l="${l}" class="${lang === l ? 'on' : ''}">${L[l]._name || l}</button>`).join('') + '</div>';
       html += `<div class="sec">🤝 ${t('fairTitle')}</div>` + ['fair1', 'fair2', 'fair3', 'fair4', 'fair5'].map(k => `<div class="item"><div class="ic">✓</div><div class="txt"><small style="color:var(--text)">${t(k)}</small></div></div>`).join('');
       html += `<div class="sec">🔒 ${t('privacy')}</div><p class="note">${t('privacyText')}</p><button class="btn ghost" data-act="privacy">${t('privacyEdit')}</button>`;
+      if (Native()?.adPrivacy) html += `<button class="btn ghost" data-act="adPrivacy" style="margin-top:8px">${t('adPrivacy')}</button>`;
       if (window.GLIMM_LEGAL_URL) { const u = String(window.GLIMM_LEGAL_URL).replace(/\/?$/, '/'); html += `<p class="note" style="text-align:center"><a href="${u}${lang === 'de' ? 'datenschutz' : 'privacy'}.html" target="_blank" rel="noopener">${t('legalPrivacy')}</a> · <a href="${u}impressum.html" target="_blank" rel="noopener">${t('legalImprint')}</a></p>`; }
       html += `<div class="sec">${t('about')}</div><p class="note">${t('aboutText')}</p>`;
       html += `<button class="btn ghost" data-act="reset" id="resetBtn">${t('reset')}</button><p class="note" style="text-align:center">Glimm · v2.9</p>`;
@@ -1751,6 +1752,7 @@
     else if (act === 'vipClaim') { if (SV.vip && SV.vipClaim !== todayUTC()) { SV.vipClaim = todayUTC(); addWallet(100); sfx.claim(); save(); renderSheet(); } }
     else if (act === 'capsule') openCapsule();
     else if (act === 'privacy') openConsent();
+    else if (act === 'adPrivacy') { try { Native()?.adPrivacy?.(); } catch {} }
     else if (act === 'build') {
       const V = SV.village, A = VILLAGE[V.a], it = A && A.items[V.done];
       if (!it || SV.stars < it[3]) return;
